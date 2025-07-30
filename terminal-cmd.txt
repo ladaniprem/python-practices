@@ -1,0 +1,145 @@
+D:\prem\coding\code with python>py -3 --version
+Python 3.13.5
+
+D:\prem\coding\code with python>py    
+Python 3.13.5 experimental free-threading build (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:12:42) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 2+2
+4
+>>> name = 'prem'
+>>> name
+'prem'
+>>> quit()
+
+D:\prem\coding\code with python>touch hello.py
+'touch' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\prem\coding\code with python>py
+Python 3.13.5 experimental free-threading build (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:12:42) [MSC v.1943 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> name = 'prem'
+>>> name
+'prem'
+>>> name001 = 'prem'
+>>> _name = 'prem'
+>>> nam! = 'prem'
+  File "<stdin>", line 1
+    nam! = 'prem'
+       ^
+SyntaxError: invalid syntax
+>>> name-first = 'prem'
+  File "<stdin>", line 1
+    name-first = 'prem'
+    ^^^^^^^^^^
+SyntaxError: cannot assign to expression here. Maybe you meant '==' instead of '='?
+>>> 001name = 'prem'
+  File "<stdin>", line 1
+    001name = 'prem'
+    ^^
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+>>> 1name  = 'prem'
+  File "<stdin>", line 1
+    1name  = 'prem'
+    ^
+SyntaxError: invalid decimal literal
+>>>
+
+SyntaxError: invalid decimal literal
+>>> if = 'prem'
+  File "<stdin>", line 1
+    if = 'prem'
+       ^
+SyntaxError: invalid syntax
+>>> for = 'prem'
+  File "<stdin>", line 1
+    for = 'prem'
+        ^
+SyntaxError: invalid syntax
+>>> 2+2
+4
+>>> "Expression"
+'Expression'
+>>> myname = 'prem'
+>>> myname
+'prem'
+>>> quit()
+
+>>> meaning = 43
+>>> meaning 
+43
+>>> 2*@
+  File "<stdin>", line 1
+    2*@
+      ^
+SyntaxError: invalid syntax
+>>> 245/
+  File "<stdin>", line 1
+    245/
+        ^
+SyntaxError: invalid syntax
+>>> 24/5
+4.8
+>>> 24//5
+4
+>>> round(24/5)
+5
+>>> 24%4
+0
+>>> 24%5
+4
+>>> 2 ** 3
+8
+>>> 2 ** 5
+32
+>>> meaning = 43
+>>> meaning+= 1
+>>> meaning
+44
+>>> meaning-=1
+>>> meaning
+43
+>>> meaning *= 10
+>>> meaning
+430
+>>> meaning /= 10
+>>> meaning
+43.0
+>>>
+>>> round(meaning)
+43
+>>> meaning = round(meaning)
+>>> meaning  
+43
+>>> "prem " + "ketan"
+'prem ketan'
+>>>
+>>> 42 == 43
+False
+>>> 43 == 43
+True
+
+>>> x = True
+>>> y = False
+>>> z = True
+>>> not x
+False
+>>> not y
+True
+>>> x and  y
+False
+>>> y and x
+False
+>>> x or y
+True
+>>> y or  x
+True
+>>> x and z 
+True
+>>> z and y 
+False
+>>> y or z
+True
+>>> z or y
+True
+>>> quit()

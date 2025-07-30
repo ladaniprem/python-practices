@@ -1,0 +1,1 @@
+print("coffee".ljust(16,"."))
