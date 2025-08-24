@@ -2,7 +2,14 @@ import sys
 import random
 from enum import Enum
 
-def play_rep():
+def rps():
+   game_count = 0
+   player_wins = 0
+   python_wins = 0
+
+   def play_rep():
+    nonlocal player_wins
+    nonlocal python_wins
     class RPS(Enum):
         ROCK = 1
         PAPER = 2
@@ -25,18 +32,36 @@ def play_rep():
     print("You chose " + str(RPS(player)).replace('RPS.', '') + ".")
     print("Python chose " + str(RPS(computer)).replace('RPS.', '') + ".")
     print("")
+    
+    def decide_winner(player,computer):
+       nonlocal player_wins
+       nonlocal python_wins
+       if player == 1 and computer == 3:
+        player_wins +=1
+        return("🥳 You Win!")
+       elif player == 2 and computer == 1:
+        player_wins +=1
+        return("🥳 You Win!")
+       elif player == 3 and computer == 2:
+        player_wins +=1
+        return("🥳 You Win!")
+       elif player == computer:
+        return("😂 Tie Game!")
+       else:
+        python_wins += 1
+        return("😎 Python Wins!")
 
-    if player == 1 and computer == 3:
-        print("🥳 You Win!")
-    elif player == 2 and computer == 1:
-        print("🥳 You Win!")
-    elif player == 3 and computer == 2:
-        print("🥳 You Win!")
-    elif player == computer:
-        print("😂 Tie Game!")
-    else:
-        print("😎 Python Wins!")
+    game_result = decide_winner(player,computer)
+    print(game_result)
+    
+    # global game_count
+    nonlocal game_count
+    game_count += 1
 
+    print("\nGame count:"+str(game_count))
+    print("\nPlayer wins:"+str(player_wins))
+    print("\nPython wins:"+str(python_wins))
+    
     while True:
         play_again = input("\nPlay Again?\nY for Yes or Q to Quit: ").lower()
         if play_again not in ["y", "q"]:
@@ -48,8 +73,12 @@ def play_rep():
             print("Thank you for playing!\n")
             sys.exit("Bye!")
 
+   return play_rep()
+
+rps()
 # Start the game
-play_rep()
+# play_rep()
+
 
     # value = input('please enter the value:\n')
     # print(value)
