@@ -1,0 +1,120 @@
+# Turtle code
+# import turtle 
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# pen = turtle.Turtle()
+# pen.pensize(5)
+# pen.color("red","yellow")
+# pen.begin_fill()
+# for i in range(4):
+#     pen.forward(100)
+#     pen.right(90)
+
+# pen.end_fill()
+# pen.hideturtle()
+# turtle.done()  
+
+# import turtle 
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# pen = turtle.Turtle()
+# pen.pensize(5)
+# pen.speed(5)
+# pen.pensize(3)
+
+# colors = ["red", "purple", "blue", "green", "orange", "yellow"]
+# pen.begin_fill()
+# for i in range(6):
+#     pen.pencolor(colors[i % 6])
+#     pen.forward(100)
+#     pen.right(60)
+
+# pen.end_fill()
+# pen.hideturtle()
+# turtle.done()  
+
+
+# import turtle 
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# pen = turtle.Turtle()
+# pen.pensize(5)
+# pen.speed(5)
+# pen.pensize(3)
+
+# colors = ["red", "purple", "blue", "green", "orange", "yellow"]
+# pen.begin_fill()
+# for i in range(5):
+#     pen.pencolor(colors[i % 6])
+#     pen.forward(100)
+#     pen.right(72)
+
+# pen.end_fill()
+# pen.hideturtle()
+# turtle.done()  
+
+
+# import turtle 
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# pen = turtle.Turtle()
+# pen.pensize(5)
+# pen.speed(5)
+
+# colors = ["red", "purple", "blue", "green", "orange", "yellow"]
+# pen.begin_fill()
+# for i in range(3):
+#     pen.pencolor(colors[i % 3])
+#     pen.backward(100)
+#     pen.right(120)
+
+# pen.end_fill()
+# pen.hideturtle()
+# turtle.done()  
+
+# import turtle 
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# pen = turtle.Turtle()
+# pen.pensize(5)
+# pen.speed(5)
+
+# colors = ["red", "purple", "blue", "green", "orange", "yellow"]
+# pen.begin_fill()
+# for i in range(5):
+#     pen.pencolor(colors[i % 6])
+#     pen.forward(100)
+#     pen.right(144)
+
+# pen.end_fill()
+# pen.hideturtle()
+# turtle.done()  
+
+
+# import turtle 
+
+# screen = turtle.Screen()
+# screen.bgcolor("black")
+# pen = turtle.Turtle()
+# pen.pensize(5)
+# pen.speed(5)
+# a=100
+# b=50
+# colors = ["red", "purple", "blue", "green", "orange", "yellow"]
+# pen.begin_fill()
+# for i in range(2):
+#     pen.pencolor(colors[i % 6])
+#     pen.forward(a)
+#     pen.right(90)
+#     pen.forward(b)
+#     pen.right(90)
+
+# pen.end_fill()
+# pen.hideturtle()
+# turtle.done() 
+
