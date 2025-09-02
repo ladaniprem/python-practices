@@ -1,6 +1,30 @@
 # Turtle code
-# import turtle 
+"""
+Turtle Graphics Theory:
 
+1. Basic Concepts:
+    - Turtle graphics simulates a turtle with a pen moving on a canvas
+    - The turtle can move forward/backward and turn left/right
+    - Commands build drawings step by step
+
+2. Main Components:
+    - Screen: The drawing canvas
+    - Turtle: The drawing cursor
+    - Pen: Controls line properties (color, width)
+
+3. Common Commands:
+    - forward()/backward(): Move turtle
+    - right()/left(): Rotate turtle
+    - penup()/pendown(): Control drawing
+    - color(): Set pen color
+    - begin_fill()/end_fill(): Fill shapes
+
+4. Coordinates:
+    - Default (0,0) is screen center
+    - Positive x is right
+    - Positive y is up
+"""
+# import turtle 
 # screen = turtle.Screen()
 # screen.bgcolor("black")
 # pen = turtle.Turtle()
