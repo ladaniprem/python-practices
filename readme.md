@@ -17,11 +17,29 @@ This repository contains various Python practice scripts and examples. Each file
 - `recursion.py`: Recursive functions.
 - `rps.py`: Rock-Paper-Scissors game implementation.
 - `scope.py`: Variable scope demonstration.
+- `strings.py`: String manipulation examples.
+- `exceptions.py`: Error handling and exceptions.
+- `classes.py`: Object-oriented programming basics.
+- `modules.py`: Working with Python modules.
+- `TK.py`: Tkinter GUI examples.
+- `TT.py`: Testing utilities.
+- `matpolib.py`: Matplotlib visualization examples.
 
 ## How to Use
 
 Open any Python file and run it using your preferred Python interpreter. Each script is self-contained and can be executed independently.
 
+## Requirements
+
+- Python 3.x
+- No additional packages required
+- Matplotlib (for matpolib.py)
+- Tkinter (for TK.py)
+
 ## Author
 
 Created by ladaniprem.
+
+## License
+
+This project is open source and available under the MIT License.
