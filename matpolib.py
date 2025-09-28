@@ -121,3 +121,41 @@
 # plt.xlabel("Time (hours)")
 # plt.ylabel("Temperature (°C)")
 # plt.show()
+
+# import numpy as np
+# import matplotlib.pyplot as plt 
+
+# # Generate random data
+# data = np.random.rand(10, 10)
+
+# # Create heatmap
+# plt.imshow(data, cmap='rainbow', interpolation='nearest')
+# plt.colorbar()
+# plt.title('Heatmap')
+# plt.show()
+
+
+
+# import matplotlib.pyplot as plt
+# import numpy as np
+# # Generate data
+# x = np.linspace(0, 10, 100)  # 100 points from 0 to 10
+# y = np.sin(x)  # Sine function
+
+# # Create plot
+# plt.plot(x, y, label='Sine Wave', color='blue')
+# plt.grid(True)  # Enable grid lines
+
+# # Add title and labels
+# plt.title('Customized Line Plot', fontsize=14, fontweight='bold')
+# plt.xlabel('Time (seconds)', fontsize=12)
+# plt.ylabel('Amplitude', fontsize=12)
+
+
+# # Add legend
+# #plt.legend()
+# plt.legend(loc='upper right', fontsize=10, shadow=True)
+
+# # Show plot
+# plt.show()
+
