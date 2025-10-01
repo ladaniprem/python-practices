@@ -1,0 +1,12 @@
+Bordcasting and vectorization differnce
+
+Bordcasting:- 
+
+expand smaller --> longer
+faster than loops
+1D-> 2D
+
+vectorization:-
+entire array
+100x faster than loops
+matrix operation
