@@ -1,0 +1,8 @@
+1 - understand the data set 
+Theory: Analyze the structure, types, and sources of the data to gain insights and identify patterns or anomalies.
+
+2- identify the problems
+Theory: Detect issues such as missing values, inconsistencies, or outliers that may affect data quality or analysis.
+
+3- plan next steps 
+Theory: Develop a strategy to clean, preprocess, and analyze the data based on the identified problems and project goals.
