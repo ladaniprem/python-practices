@@ -1,0 +1,108 @@
+import pandas as pd
+import numpy as np
+
+# path from your message (use raw string on Windows)
+path = r"D:\prem\coding\code with python\pandas_practice\advance pandas\Handling Missing Data\inter.txt"
+
+# read single row as a Series
+df = pd.read_csv(path, header=None, dtype=str)   # read raw strings first
+vals = df.iloc[0].str.strip()                     # get the first (and only) row
+
+# convert to numeric, treating various 'Nan' forms as NaN
+s = pd.to_numeric(vals.replace({'Nan': np.nan, 'nan': np.nan, 'NaN': np.nan}), errors='coerce')
+s.index = range(len(s))  # ensure clean integer index
+s.name = "value"
+print("Original:")
+print(s)
+
+# Linear interpolation (default)
+lin = s.interpolate(method='linear')
+print("\nLinear interpolation:")
+print(lin)
+
+# Polynomial interpolation (order=2) -- works when there are enough non-NaN neighbors
+if s.notna().sum() >= 3:
+    try:
+        poly = s.interpolate(method='polynomial', order=2)
+        print("\nPolynomial (order=2) interpolation:")
+        print(poly)
+    except Exception as e:
+        print("\nPolynomial interpolation failed:", e)
+else:
+    print("\nPolynomial (order=2) interpolation: Not enough non-NaN values for polynomial interpolation.")
+
+# Time interpolation (requires a DatetimeIndex) - example of how to apply if index were times
+try:
+    # Demonstration only: create a datetime index if values represent equally spaced times
+    dt_index = pd.date_range("2020-01-01", periods=len(s), freq="D")
+    s_time = s.copy()
+    s_time.index = dt_index
+    time_interp = s_time.interpolate(method='time')
+    print("\nTime interpolation (applied after converting index to DatetimeIndex):")
+    print(time_interp)
+except Exception as e:
+    print("\nTime interpolation could not be applied:", e)
+
+# Nearest, zero, slinear, quadratic, cubic where supported
+methods_to_try = ['nearest', 'zero', 'slinear', 'quadratic', 'cubic', 'spline']
+for m in methods_to_try:
+    try:
+        if m == 'spline':
+            out = s.interpolate(method=m, order=3)  # spline needs order
+        elif m in ('quadratic', 'cubic', 'slinear'):
+            out = s.interpolate(method=m)
+        else:
+            out = s.interpolate(method=m)
+        print(f"\nInterpolation method='{m}':")
+        print(out)
+    except Exception as e:
+        print(f"\nMethod '{m}' not applied or failed:", e)
+
+# Example with limit: only fill up to 1 consecutive NaN
+limited = s.interpolate(limit=1, limit_direction='both')
+print("\nInterpolation with limit=1 (only fill up to 1 consecutive NaN):")
+print(limited)
+
+
+# Interpolation in pandas (Series.interpolate / DataFrame.interpolate)
+#
+# Purpose:
+# - Fill missing (NaN) values by estimating values from surrounding non-NaN points.
+# - Useful to preserve trends, avoid dropping rows, and prepare series for analysis/models.
+#
+# Common methods:
+# - linear: straight-line interpolation between points (default). Good for evenly spaced numeric data.
+#   Pros: simple, fast, preserves monotonic trends between known points.
+#   Cons: may underfit curves with nonlinear trends.
+#
+# - polynomial: fit a polynomial of given order through neighboring points.
+#   Usage: method='polynomial', order=k. Requires at least (k+1) non-NaN points to fit.
+#   Pros: captures curvature; good for smooth nonlinear trends when order chosen appropriately.
+#   Cons: can oscillate (Runge phenomenon) at higher orders; needs enough data.
+#
+# - time: uses time-weighted interpolation; requires a DatetimeIndex. Useful when x-axis is time and spacing isn't uniform.
+#   Pros: respects actual time distances between observations.
+#   Cons: only valid when index is date like.
+#
+# - index: uses the index values as x-coordinates for interpolation. Useful if index is numeric.
+#
+# - nearest: uses the nearest non-NaN neighbor. Good when you want step-like fills.
+#
+# - zero / slinear / quadratic / cubic: specific spline/linear variations (some rely on SciPy).
+#   - 'spline' and higher-order splines typically need 'order' and may require SciPy installed.
+#
+# Controls and options:
+# - limit: maximum number of consecutive NaNs to fill (prevents filling long gaps).
+# - limit_direction: 'forward', 'backward', or 'both' controls direction of filling.
+# - axis: interpolate along rows or columns.
+# - inplace: modify object in place (if supported).
+#
+# Practical guidance:
+# - Choose method matching expected underlying behavior (linear for steady change, polynomial/spline for smooth curves).
+# - Use 'time' when timestamps are irregular and spacing matters.
+# - Use limit to avoid overconfidently filling long missing runs.
+# - Validate interpolated values (plot, cross-check) before using in modeling.
+#
+# The code above demonstrates applying multiple methods and shows how to handle methods that require
+# specific conditions (DatetimeIndex for 'time', sufficient non-NaN points for polynomial).
+
