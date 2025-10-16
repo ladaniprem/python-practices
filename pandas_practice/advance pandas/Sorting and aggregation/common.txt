@@ -1,0 +1,29 @@
+Brief theory of the listed aggregation functions (typical in pandas / numerical data):
+
+- sum()
+    - Definition: total of values in a set. Formula: sum = Σ xi.
+    - Pandas: by default skipna=True (ignores NaN). Works for numeric and concatenates strings/objects in some contexts.
+    - Complexity: O(n).
+
+- mean()
+    - Definition: arithmetic average. Formula: mean = (Σ xi) / n_effective, where n_effective is number of non-missing values.
+    - Pandas: skipna=True by default. Equivalent to sum() / count() for non-missing values.
+
+- count()
+    - Definition: number of non-missing (non-NaN) observations.
+    - Pandas: counts non-NA entries per column/row or per group. Different from size (size counts all rows including NaN).
+
+- min() / max()
+    - Definition: minimum / maximum element in a set.
+    - Pandas: ignore NaN by default (skipna=True). For mixed dtypes, behavior follows type-specific comparison rules.
+
+- std()
+    - Definition: standard deviation measures dispersion around the mean.
+    - Formula (sample std, pandas default): std = sqrt( Σ(xi - mean)^2 / (n_effective - ddof) ), pandas uses ddof=1 by default (sample standard deviation). For population std use ddof=0.
+    - Pandas: skipna=True by default; ddof parameter available to change denominator.
+
+Additional practical notes
+- count vs size: use count() to ignore NaNs, size to include them.
+- Missing data: most aggregations ignore NaN by default; verify skipna if needed.
+- Grouped aggregation: use df.groupby(...).agg(['sum','mean','count','min','max','std']) to compute these per group.
+- Numerical stability: for large datasets, floating-point rounding can affect sum and variance; use higher-precision types or stable algorithms if needed.

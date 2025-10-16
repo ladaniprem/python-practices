@@ -10,3 +10,11 @@ df = pd.DataFrame(data)
 print(df)
 
 df.interpolate(method='linear',axis=0,inplace=True)
+
+"""
+1- timer series data
+2 - numeric data with trends
+3 - avoid dropping rows or columns use it the interpolation
+
+
+"""
